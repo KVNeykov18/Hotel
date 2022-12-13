@@ -12,14 +12,17 @@ public class Main {
         medicine.add(medicine2);
         medicine.add(medicine3);
         medicine.add(medicine4);
+        System.out.println(medicine);
+        System.out.println();
         System.out.println(printExpensiveMedicine(medicine));
         System.out.println(printMedicineCapacity(medicine));
+        System.out.println(printMoreExpensiveMed(medicine));
         System.out.println(printExpiringMedicine(medicine));
     }
 
     public static ArrayList<Pharmacy> printExpensiveMedicine(ArrayList<Pharmacy> newmedicine1) {
         for(Pharmacy p: newmedicine1) {
-            if (p.getPrice() > 5) {
+            if (p.getPrice() < 10) {
             printExpensiveMedicine(newmedicine1);
             }
             break;
@@ -27,6 +30,15 @@ public class Main {
         return newmedicine1;
     }
 
+    public static ArrayList<Pharmacy> printMoreExpensiveMed(ArrayList<Pharmacy> newmedicine1) {
+        for(Pharmacy p: newmedicine1) {
+            if (p.getPrice() > 15) {
+                printMoreExpensiveMed(newmedicine1);
+            }
+            break;
+        }
+        return newmedicine1;
+    }
 
     public static ArrayList<Pharmacy> printMedicineCapacity(ArrayList<Pharmacy> newmedicine2) {
         for(Pharmacy p: newmedicine2) {
